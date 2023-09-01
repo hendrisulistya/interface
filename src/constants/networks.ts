@@ -31,7 +31,10 @@ export const FALLBACK_URLS: { [key in SupportedChainId]: string[] } = {
  * These are the URLs used by the interface when there is not another available source of chain data.
  */
 export const RPC_URLS: { [key in SupportedChainId]: string[] } = {
-  [SupportedChainId.MAINNET]: [`https://jsonrpc-evmos-ia.cosmosia.notional.ventures`, ...FALLBACK_URLS[SupportedChainId.MAINNET]],
+  [SupportedChainId.MAINNET]: [
+    `https://jsonrpc-evmos-ia.cosmosia.notional.ventures`,
+    ...FALLBACK_URLS[SupportedChainId.MAINNET],
+  ],
 
   [SupportedChainId.OPTIMISM]: [
     // `https://api.avax-test.network/ext/bc/C/rpc`,
