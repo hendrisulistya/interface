@@ -51,7 +51,7 @@ export function useBestTrade(
     tradeType,
     autoRouterSupported && shouldGetTrade ? debouncedAmount : undefined,
     debouncedOtherCurrency,
-    clientSideRouter ? RouterPreference.CLIENT : RouterPreference.CLIENT
+    clientSideRouter ? RouterPreference.CLIENT : RouterPreference.API
   )
 
   const isLoading = routingAPITrade.state === TradeState.LOADING

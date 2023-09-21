@@ -32,16 +32,16 @@ function getRouter(chainId: ChainId): AlphaRouter {
 
 // routing API quote params: https://github.com/Uniswap/routing-api/blob/main/lib/handlers/quote/schema/quote-schema.ts
 const API_QUERY_PARAMS = {
-  protocols: 'v2,v3,mixed',
+  protocols: 'v3',
 }
 const CLIENT_PARAMS = {
-  protocols: [Protocol.V2, Protocol.V3, Protocol.MIXED],
+  protocols: [Protocol.V3],
 }
 // Price queries are tuned down to minimize the required RPCs to respond to them.
 // TODO(zzmp): This will be used after testing router caching.
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const PRICE_PARAMS = {
-  protocols: [Protocol.V2, Protocol.V3],
+  protocols: [Protocol.V3],
   v2PoolSelection: {
     topN: 2,
     topNDirectSwaps: 1,
@@ -67,7 +67,7 @@ const PRICE_PARAMS = {
 export const routingApi = createApi({
   reducerPath: 'routingApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://21x5w4o8d6.execute-api.us-east-1.amazonaws.com/prod/',
+    baseUrl: 'https://forge-router.evmosdao.xyz/',
   }),
   endpoints: (build) => ({
     getQuote: build.query<
