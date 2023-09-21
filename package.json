@@ -17,7 +17,9 @@
     "i18n:compile": "yarn i18n:extract && lingui compile",
     "i18n:pseudo": "lingui extract --locale pseudo && lingui compile",
     "prepare": "yarn contracts:compile && yarn i18n:compile",
+    "start:node18": "CI=false NODE_OPTIONS=\"--openssl-legacy-provider --no-experimental-fetch\" yarn start",
     "start": "craco start",
+    "build:node18": "CI=false NODE_OPTIONS=\"--openssl-legacy-provider --no-experimental-fetch\" yarn build",
     "build": "craco build",
     "serve": "serve build -l 3000",
     "deduplicate": "yarn-deduplicate --strategy=highest",
@@ -244,7 +246,7 @@
   },
   "engines": {
     "npm": "please-use-yarn",
-    "node": "18.x",
+    "node": ">=16.x",
     "yarn": ">=1.22"
   }
 }
