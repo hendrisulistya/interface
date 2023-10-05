@@ -2,7 +2,7 @@
 import { Currency, Token } from '@uniswap/sdk-core'
 import { SupportedChainId } from 'constants/chains'
 
-import { nativeOnChain, STATOM, STEVMOS, USDC_EVMOS, WETH_EVMOS, WRAPPED_NATIVE_CURRENCY } from './tokens'
+import { nativeOnChain, STATOM, STEVMOS, USDC_EVMOS, USDT_EVMOS, WETH_EVMOS, WRAPPED_NATIVE_CURRENCY } from './tokens'
 
 type ChainTokenList = {
   readonly [chainId: number]: Token[]
@@ -41,7 +41,14 @@ export const CUSTOM_BASES: { [chainId: number]: { [tokenAddress: string]: Token[
  * Shows up in the currency select for swap and add liquidity
  */
 export const COMMON_BASES: ChainCurrencyList = {
-  [SupportedChainId.MAINNET]: [STEVMOS, nativeOnChain(SupportedChainId.MAINNET), STATOM, USDC_EVMOS, WETH_EVMOS],
+  [SupportedChainId.MAINNET]: [
+    STEVMOS,
+    nativeOnChain(SupportedChainId.MAINNET),
+    STATOM,
+    USDC_EVMOS,
+    USDT_EVMOS,
+    WETH_EVMOS,
+  ],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend

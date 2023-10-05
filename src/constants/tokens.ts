@@ -18,6 +18,15 @@ export const USDC_EVMOS = new Token(
   'USD//C'
 )
 
+// eslint-disable-next-line import/no-unused-modules
+export const USDT_EVMOS = new Token(
+  SupportedChainId.MAINNET,
+  '0xB8f812B5943ab3BF941D5D4F1de90A4b326c5d8f',
+  18,
+  'USDT',
+  'USDT Kava'
+)
+
 export const STEVMOS = new Token(
   SupportedChainId.MAINNET,
   '0x2C68D1d6aB986Ff4640b51e1F14C716a076E44C4',
@@ -36,6 +45,7 @@ export const STATOM = new Token(
 
 export const EVMOS_STABLE_COINS = [
   USDC_EVMOS.address.toLowerCase(),
+  USDT_EVMOS.address.toLowerCase(),
   '0x4A2a90D444DbB7163B5861b772f882BbA394Ca67'.toLowerCase(),
   '0xe01C6D4987Fc8dCE22988DADa92d56dA701d0Fe0'.toLowerCase(),
   '0xecEEEfCEE421D8062EF8d6b4D814efe4dc898265'.toLowerCase(),
