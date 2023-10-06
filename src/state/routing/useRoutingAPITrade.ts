@@ -2,7 +2,6 @@ import { IMetric, MetricLoggerUnit, setGlobalMetric } from '@orbitalapes/smart-o
 import { skipToken } from '@reduxjs/toolkit/query/react'
 import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
 import { sendTiming } from 'components/analytics'
-import { AVERAGE_L1_BLOCK_TIME } from 'constants/chainInfo'
 import { useStablecoinAmountFromFiatValue } from 'hooks/useStablecoinPrice'
 import { useRoutingAPIArguments } from 'lib/hooks/routing/useRoutingAPIArguments'
 import useIsValidBlock from 'lib/hooks/useIsValidBlock'
@@ -46,7 +45,7 @@ export function useRoutingAPITrade<TTradeType extends TradeType>(
 
   const { isLoading, isError, data, currentData } = useGetQuoteQuery(queryArgs ?? skipToken, {
     // Price-fetching is informational and costly, so it's done less frequently.
-    pollingInterval: routerPreference === RouterPreference.PRICE ? ms`2m` : AVERAGE_L1_BLOCK_TIME,
+    pollingInterval: routerPreference === RouterPreference.PRICE ? ms`2m` : ms`10s`,
   })
   const quoteResult: GetQuoteResult | undefined = useIsValidBlock(Number(data?.blockNumber) || 0) ? data : undefined
 

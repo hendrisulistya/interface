@@ -51,7 +51,7 @@ const CHAIN_INFO: ChainInfoMap = {
   [SupportedChainId.MAINNET]: {
     networkType: NetworkType.L1,
     blockWaitMsBeforeWarning: ms`10m`,
-    docs: 'https://docs.uniswap.org/',
+    docs: 'https://docs.forge.trade/',
     explorer: 'https://escan.live/',
     infoLink: 'https://docs.evmos.org/',
     label: 'Evmos',
