@@ -8,7 +8,8 @@ import useBlockNumber from './useBlockNumber'
 // The oldest block (per chain) to be considered valid.
 const oldestBlockMapAtom = atomWithImmer<{ [chainId: number]: number }>({})
 
-const DEFAULT_MAX_BLOCK_AGE = 10
+// Roughly 1min (60/4s Evmos block times)
+const DEFAULT_MAX_BLOCK_AGE = 15
 
 function useGetIsValidBlock(maxBlockAge = DEFAULT_MAX_BLOCK_AGE): (block: number) => boolean {
   const { chainId } = useWeb3React()

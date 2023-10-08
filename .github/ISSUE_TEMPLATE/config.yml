@@ -1,8 +1,8 @@
 blank_issues_enabled: true
 contact_links:
   - name: Support
-    url: https://discord.gg/FCfyBSbCU5
-    about: Please ask and answer questions here
+    url: https://t.me/ForgeDEX
+    about: User support should be directed to our Telegram group.
   - name: List a token
-    url: https://github.com/Uniswap/default-token-list#adding-a-token
-    about: Any requests to add a token to Uniswap should go here
+    url: https://github.com/Forge-Trade/tokenlist
+    about: Follow the instructions in the tokenlist repo to add an asset to Forge.
