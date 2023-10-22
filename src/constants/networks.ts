@@ -19,6 +19,9 @@ export const FALLBACK_URLS: { [key in SupportedChainId]: string[] } = {
   [SupportedChainId.MAINNET]: [
     // "Safe" URLs
     'https://jsonrpc-evmos-ia.cosmosia.notional.ventures',
+    'https://evmos.lava.build',
+    'https://evmos-evm.publicnode.com',
+    'https://evmos-rpc.gateway.pokt.network',
   ],
   [SupportedChainId.OPTIMISM]: [
     // "Safe" URLs

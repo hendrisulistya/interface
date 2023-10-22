@@ -23,7 +23,7 @@ const REGISTRAR_ABI = [
     type: 'function',
   },
 ]
-const REGISTRAR_ADDRESS = '0xabbaa322a763b36587e3f63e46a81deacb2957a7'
+const REGISTRAR_ADDRESS = '0xae9Da235A2276CAa3f6484ad8F0EFbF4e0d45246'
 
 const RESOLVER_ABI = [
   {

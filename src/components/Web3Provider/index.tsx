@@ -13,11 +13,15 @@ export default function Web3Provider({ children }: { children: ReactNode }) {
   useEagerlyConnect()
   const connections = useOrderedConnections()
   const connectors: [Connector, Web3ReactHooks][] = connections.map(({ hooks, connector }) => [connector, hooks])
-
+  const networkCustom = {
+    name: 'Evmos',
+    chainId: 9001,
+    ensAddress: '0xae9da235a2276caa3f6484ad8f0efbf4e0d45246',
+  }
   const key = useMemo(() => connections.map(({ type }: Connection) => getConnectionName(type)).join('-'), [connections])
 
   return (
-    <Web3ReactProvider connectors={connectors} key={key}>
+    <Web3ReactProvider connectors={connectors} network={networkCustom} key={key}>
       <Tracer />
       {children}
     </Web3ReactProvider>
