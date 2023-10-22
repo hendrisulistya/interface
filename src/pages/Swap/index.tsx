@@ -285,6 +285,7 @@ export default function Swap({ className, intro }: { className?: string; intro?:
       routeIsSyncing || !trade ? undefined : computeFiatValuePriceImpact(fiatValueTradeInput, fiatValueTradeOutput),
     [fiatValueTradeInput, fiatValueTradeOutput, routeIsSyncing, trade]
   )
+  const [isRecipientVisible, setIsRecipientVisible] = useState(false)
 
   const { onSwitchTokens, onCurrencySelection, onUserInput, onChangeRecipient } = useSwapActionHandlers()
   const isValid = !swapInputError
@@ -718,18 +719,37 @@ export default function Swap({ className, intro }: { className?: string; intro?:
                           loading={independentField === Field.INPUT && routeIsSyncing}
                         />
                       </Trace>
-
-                      {recipient !== null && !showWrap ? (
+                      {!showWrap && isExpertMode ? (
                         <>
-                          <AutoRow justify="space-between" style={{ padding: '0 1rem' }}>
-                            <ArrowWrapper clickable={false}>
-                              <ArrowDown size="16" color={theme.textSecondary} />
-                            </ArrowWrapper>
-                            <LinkStyledButton id="remove-recipient-button" onClick={() => onChangeRecipient(null)}>
-                              <Trans>- Remove recipient</Trans>
+                          <AutoRow
+                            justify="space-between"
+                            style={{ display: 'flex', justifyContent: 'center', zIndex: 3 }}
+                          >
+                            <LinkStyledButton
+                              id="remove-recipient-button"
+                              style={{
+                                marginTop: '0.2rem',
+                                display: 'flex',
+                                alignSelf: 'start',
+                                stroke: 'inherit',
+                                fontWeight: 400,
+                                fontSize: '10px',
+                                color: '#918378',
+                                opacity: 0.5,
+                              }}
+                              onClick={() => {
+                                setIsRecipientVisible(!isRecipientVisible)
+                                if (isRecipientVisible) {
+                                  onChangeRecipient(null)
+                                }
+                              }}
+                            >
+                              {isRecipientVisible ? <Trans>- Remove Recipient</Trans> : <Trans>+ Add Recipient</Trans>}
                             </LinkStyledButton>
                           </AutoRow>
-                          <AddressInputPanel id="recipient" value={recipient} onChange={onChangeRecipient} />
+                          {isRecipientVisible && (
+                            <AddressInputPanel id="recipient" value={recipient || ''} onChange={onChangeRecipient} />
+                          )}
                         </>
                       ) : null}
                     </OutputSwapSection>
@@ -814,7 +834,7 @@ export default function Swap({ className, intro }: { className?: string; intro?:
                                 <MouseoverTooltip
                                   text={
                                     <Trans>
-                                      You must give the Uniswap smart contracts permission to use your{' '}
+                                      You must give the Forge smart contracts permission to use your{' '}
                                       {currencies[Field.INPUT]?.symbol}. You only have to do this once per token.
                                     </Trans>
                                   }
@@ -884,7 +904,7 @@ export default function Swap({ className, intro }: { className?: string; intro?:
                               <MouseoverTooltip
                                 text={
                                   <Trans>
-                                    Permission is required for Uniswap to swap each token. This will expire after one
+                                    Permission is required for Forge to swap each token. This will expire after one
                                     month for your security.
                                   </Trans>
                                 }
