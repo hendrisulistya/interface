@@ -5,6 +5,7 @@
   "homepage": ".",
   "license": "GPL-3.0-or-later",
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "contracts:compile:abi": "typechain --target ethers-v5 --out-dir src/abis/types \"./src/abis/**/*.json\"",
     "contracts:compile:v3": "typechain --target ethers-v5 --out-dir src/types/v3 \"./node_modules/@uniswap/**/artifacts/contracts/**/*[!dbg].json\"",
     "contracts:compile": "yarn contracts:compile:abi && yarn contracts:compile:v3",
@@ -19,7 +20,7 @@
     "prepare": "yarn contracts:compile && yarn i18n:compile",
     "start:node18": "CI=false NODE_OPTIONS=\"--openssl-legacy-provider --no-experimental-fetch\" yarn start",
     "start": "craco start",
-    "build:node18": "CI=false NODE_OPTIONS=\"--openssl-legacy-provider --no-experimental-fetch\" yarn build",
+    "build:node18": "CI=false NODE_OPTIONS=\"--max-old-space-size=4076 --openssl-legacy-provider --no-experimental-fetch\" yarn build",
     "build": "craco build",
     "serve": "serve build -l 3000",
     "deduplicate": "yarn-deduplicate --strategy=highest",
@@ -52,10 +53,9 @@
   },
   "browserslist": [
     ">0.2%",
-   "not dead",
-   "not op_mini all"
- ],
- 
+    "not dead",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "@craco/craco": "6.4.3",
     "@ethersproject/experimental": "^5.4.0",
@@ -222,6 +222,7 @@
     "redux": "^4.1.2",
     "redux-localstorage-simple": "^2.3.1",
     "setimmediate": "^1.0.5",
+    "source-map-explorer": "^2.5.3",
     "statsig-react": "^1.22.0",
     "styled-components": "^5.3.5",
     "tiny-invariant": "^1.2.0",
