@@ -24,7 +24,12 @@ export function matchDocument({ request, url }: RouteMatchCallbackOptions) {
 
   // If this isn't app.uniswap.org (or a local build), skip.
   // IPFS gateways may not have domain separation, so they cannot use document caching.
-  if (url.hostname !== 'app.forge.trade' && !isDevelopment()) {
+  if (
+    !url.hostname.endsWith('.forge.trade') &&
+    !url.hostname.endsWith('.netlify.app') &&
+    !url.hostname.endsWith('.vercel.app') &&
+    !isDevelopment()
+  ) {
     return false
   }
 
