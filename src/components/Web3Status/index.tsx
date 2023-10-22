@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* ^ ignore errors from cypher wallet integration */
 import { t, Trans } from '@lingui/macro'
 import { sendAnalyticsEvent, TraceEvent } from '@uniswap/analytics'
 import { BrowserEvent, InterfaceElementName, InterfaceEventName } from '@uniswap/analytics-events'

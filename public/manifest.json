@@ -1,10 +1,10 @@
 {
-  "background_color": "#fff",
+  "background_color": "#28292c",
   "display": "standalone",
-  "homepage_url": "https://app.uniswap.org",
+  "homepage_url": "https://app.forge.trade",
   "providedBy": {
     "name": "Forge",
-    "url": "https://uniswap.org"
+    "url": "https://app.forge.trade"
   },
   "icons": [
     {
@@ -21,10 +21,10 @@
     }
   ],
   "orientation": "portrait",
-  "name": "Forge",
-  "description": "Swap or provide liquidity on the Uniswap Protocol",
+  "name": "Forge DEX",
+  "description": "Swap or provide liquidity on the concentrated liquidity hub on Cosmos, powered by the EVM.",
   "iconPath": "./images/256x256_App_Icon_Pink.svg",
-  "short_name": "Uniswap",
+  "short_name": "Forge",
   "start_url": ".",
-  "theme_color": "#111212"
+  "theme_color": "#ed4e33"
 }

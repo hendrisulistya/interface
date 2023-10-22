@@ -33,6 +33,7 @@ const Landing = React.lazy(() => import('./Landing'))
 const Swap = React.lazy(() => import('./Swap'))
 const Pools = React.lazy(() => import('./Pools'))
 const Pool = React.lazy(() => import('./Pool'))
+// const Tokens = React.lazy(() => import('./Tokens'))
 
 const BodyWrapper = styled.div`
   display: flex;
@@ -167,6 +168,7 @@ export default function App() {
                 <Route path="/" element={<Landing />} />
 
                 <Route path="swap" element={<Swap />} />
+                {/*<Route path="tokens" element={<Tokens />} />*/}
 
                 <Route path="pools" element={<Pools />} />
                 <Route path="assets" element={<RedirectAssets />} />

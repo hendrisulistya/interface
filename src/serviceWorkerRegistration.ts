@@ -93,6 +93,7 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
       console.log('No internet connection found. App is running in offline mode.')
     })
 }
+// 10-22-2023 updated envs to fix our webworkers
 
 export function register(config?: Config) {
   if ((isProductionEnv() || isStagingEnv()) && 'serviceWorker' in navigator) {
