@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://forge.trade"
+  to = "https://app.forge.trade"
+  status = 301
+  force = true
