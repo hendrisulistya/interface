@@ -1,0 +1,12 @@
+diff --git a/node_modules/@uniswap/analytics-events/lib/cjs/types/interface/trace.d.ts b/node_modules/@uniswap/analytics-events/lib/cjs/types/interface/trace.d.ts
+index a2b4215..cbaa3e0 100644
+--- a/node_modules/@uniswap/analytics-events/lib/cjs/types/interface/trace.d.ts
++++ b/node_modules/@uniswap/analytics-events/lib/cjs/types/interface/trace.d.ts
+@@ -12,6 +12,7 @@ export declare enum InterfacePageName {
+     POOL_PAGE = "pool-page",
+     SWAP_PAGE = "swap-page",
+     TOKENS_PAGE = "tokens-page",
++    DASHBOARD_PAGE = "dashboard-page",
+     TOKEN_DETAILS_PAGE = "token-details",
+     VOTE_PAGE = "vote-page"
+ }
