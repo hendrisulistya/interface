@@ -5,8 +5,8 @@
   force = true
 
   [[redirects]]
-  from = "/#/dashboad"
-  to = "https://forge-info.vercel.app/"
+  from = "/frame/*"
+  to = "https://forge-info.netlify.app/"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
