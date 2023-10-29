@@ -13,3 +13,9 @@
 
 [[plugins]]
   package = "netlify-plugin-image-optim"
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+  [plugins.inputs.settings]
+    preset = "desktop"
