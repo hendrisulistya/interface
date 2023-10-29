@@ -33,7 +33,7 @@ const Landing = React.lazy(() => import('./Landing'))
 const Swap = React.lazy(() => import('./Swap'))
 const Pools = React.lazy(() => import('./Pools'))
 const Pool = React.lazy(() => import('./Pool'))
-// const Tokens = React.lazy(() => import('./Tokens'))
+const Dashboard = React.lazy(() => import('./Dashboard'))
 
 const BodyWrapper = styled.div`
   display: flex;
@@ -87,8 +87,8 @@ function getCurrentPageFromLocation(locationPathname: string): InterfacePageName
       return InterfacePageName.VOTE_PAGE
     case locationPathname.startsWith('/pool'):
       return InterfacePageName.POOL_PAGE
-    case locationPathname.startsWith('/tokens'):
-      return InterfacePageName.TOKENS_PAGE
+    case locationPathname.startsWith('/dashboard'):
+      return InterfacePageName.DASHBOARD_PAGE
     case locationPathname.startsWith('/nfts/profile'):
       return InterfacePageName.NFT_PROFILE_PAGE
     case locationPathname.startsWith('/nfts/asset'):
@@ -171,6 +171,7 @@ export default function App() {
                 {/*<Route path="tokens" element={<Tokens />} />*/}
 
                 <Route path="pools" element={<Pools />} />
+                <Route path="dashboard" element={<Dashboard />} />
                 <Route path="assets" element={<RedirectAssets />} />
 
                 <Route path="pool" element={<Pool />} />

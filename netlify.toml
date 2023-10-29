@@ -3,3 +3,10 @@
   to = "https://app.forge.trade"
   status = 301
   force = true
+
+  [[redirects]]
+  from = "/frame/*"
+  to = "https://forge-info.netlify.app/"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
