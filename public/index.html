@@ -32,13 +32,13 @@
     />
     <meta name="theme-color" content="#111212" />
 
-    <!-- giving errors temporarily offline
+    <!-- 
+      giving errors temporarily offline
       manifest.json provides metadata used when the app is installed as a PWA.
-      See https://developers.google.com/web/fundamentals/web-app-manifest/
+      See https://developers.google.com/web/fundamentals/web-app-manifest
     -->
     
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
     <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/Inter-roman.var.woff2"
@@ -46,15 +46,15 @@
       type="font/woff2"
       crossorigin
     />
-
+    <style>
       * {
         font-family: "Inter", sans-serif;
         box-sizing: border-box;
       }
-
-      /**
-          Explicitly load Inter var from public/ so it does not block LCP's critical path.
-        */
+        /**
+         Explicitly load Inter var from public/ so it does not block LCP's critical path.
+        **/
+      
       @font-face {
         font-family: "Inter custom";
         font-weight: 100 900;
@@ -67,7 +67,7 @@
             format("woff2-variations"),
           url(%PUBLIC_URL%/fonts/Inter-roman.var.woff2) format("woff2");
       }
-
+    <style>
       @supports (font-variation-settings: normal) {
         * {
           font-family: "Inter custom", sans-serif;
