@@ -19,7 +19,7 @@ export const USDC_EVMOS = new Token(
 )
 export const USDC_NOBLE_EVMOS = new Token(
   SupportedChainId.MAINNET,
-  '0x15C3Eb3B621d1Bff62CbA1c9536B7c1AE9149b57',
+  '0xf1faE9eC886C5F6E4ea13dA2456087Bd72F02cD1',
   6,
   'USDC',
   'USDC - Noble'
