@@ -2,7 +2,16 @@
 import { Currency, Token } from '@uniswap/sdk-core'
 import { SupportedChainId } from 'constants/chains'
 
-import { nativeOnChain, STATOM, STEVMOS, USDC_EVMOS, USDC_NOBLE_EVMOS, USDT_EVMOS, WETH_EVMOS, WRAPPED_NATIVE_CURRENCY } from './tokens'
+import {
+  nativeOnChain,
+  STATOM,
+  STEVMOS,
+  USDC_EVMOS,
+  USDC_NOBLE_EVMOS,
+  USDT_EVMOS,
+  WETH_EVMOS,
+  WRAPPED_NATIVE_CURRENCY,
+} from './tokens'
 
 type ChainTokenList = {
   readonly [chainId: number]: Token[]
