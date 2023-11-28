@@ -77,6 +77,7 @@ const StyledIframe = styled.iframe`
   width: 100%;
   min-height: 110vh;
   padding: 0;
+  margin: 0 auto;
   right: 0;
   top: 3rem;
   max-width: 1360px;
